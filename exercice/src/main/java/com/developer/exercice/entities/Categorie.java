@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Data;
 
-import java.sql.Timestamp;
+
 import java.time.LocalDate;
 import java.util.List;
 
@@ -29,12 +29,12 @@ public class Categorie {
     @OneToMany(mappedBy = "categorie")
     private List<Produit> produit;
 
-    public Categorie(Long id, String nom, int qt, LocalDate date_creation, LocalDate date_modif, List<Produit> produit) {
+    public Categorie(Long id, String nom, int qt, LocalDate dateCreation, LocalDate dateModif, List<Produit> produit) {
         this.id = id;
         this.nom = nom;
         quantite = qt;
-        dateCreation = date_creation;
-        dateModif = date_modif;
+        this.dateCreation = dateCreation;
+        this.dateModif = dateModif;
         this.produit = produit;
     }
 

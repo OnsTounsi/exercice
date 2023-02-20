@@ -3,8 +3,6 @@ package com.developer.exercice.dto;
 import com.developer.exercice.entities.Categorie;
 import lombok.Builder;
 import lombok.Data;
-
-import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -12,28 +10,28 @@ import java.util.List;
 @Data
 public class CategorieDto {
 
-    private Long Id;
+    private Long id;
 
-    private String Nom;
+    private String nom;
 
-    private int Qt;
+    private int quantite;
 
-    private LocalDate Date_creation;
+    private LocalDate dateCreation;
 
-    private LocalDate Date_modif;
+    private LocalDate dateModif;
 
-    private List<ProduitDto> p;
+    private List<ProduitDto> produit;
 
     public CategorieDto fromEntity(Categorie categorie){
         if(categorie == null){
             return null;
         }
         return CategorieDto.builder()
-                .Id(categorie.getId())
-                .Nom(categorie.getNom())
-                .Qt(categorie.getQuantite())
-                .Date_creation(categorie.getDateCreation())
-                .Date_modif(categorie.getDateModif())
+                .id(categorie.getId())
+                .nom(categorie.getNom())
+                .quantite(categorie.getQuantite())
+                .dateCreation(categorie.getDateCreation())
+                .dateModif(categorie.getDateModif())
                 .build();
 
     }
@@ -45,9 +43,9 @@ public class CategorieDto {
         Categorie categorie = new Categorie();
         categorie.setId(categorieDto.getId());
         categorie.setNom(categorieDto.getNom());
-        categorie.setQuantite(categorieDto.getQt());
-        categorie.setDateCreation(categorieDto.getDate_creation());
-        categorie.setDateModif(categorieDto.getDate_modif());
+        categorie.setQuantite(categorieDto.getQuantite());
+        categorie.setDateCreation(categorieDto.getDateCreation());
+        categorie.setDateModif(categorieDto.getDateModif());
         return categorie;
     }
 

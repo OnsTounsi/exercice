@@ -4,39 +4,37 @@ package com.developer.exercice.dto;
 import com.developer.exercice.entities.Produit;
 import lombok.Builder;
 import lombok.Data;
-
-import java.sql.Timestamp;
 import java.time.LocalDate;
 
 @Builder
 @Data
 public class ProduitDto {
 
-    private Long Id;
+    private Long id;
 
     private CategorieDto cat;
 
-    private String Nom;
+    private String nom;
 
-    private int Qt;
+    private int quantite;
 
-    private Boolean Disponible;
+    private Boolean disponible;
 
-    private LocalDate Date_creation;
+    private LocalDate dateCreation;
 
-    private LocalDate Date_modif;
+    private LocalDate dateModif;
 
     public ProduitDto fromEntity(Produit produit){
         if(produit == null){
             return null;
         }
         return ProduitDto.builder()
-                .Id(produit.getId())
-                .Nom(produit.getNom())
-                .Qt(produit.getQuantite())
-                .Disponible(produit.getDisponible())
-                .Date_creation(produit.getDateCreation())
-                .Date_modif(produit.getDateModif())
+                .id(produit.getId())
+                .nom(produit.getNom())
+                .quantite(produit.getQuantite())
+                .disponible(produit.getDisponible())
+                .dateCreation(produit.getDateCreation())
+                .dateModif(produit.getDateModif())
                 .build();
 
     }
@@ -48,10 +46,10 @@ public class ProduitDto {
         Produit produit = new Produit();
         produit.setId(produitDto.getId());
         produit.setNom(produitDto.getNom());
-        produit.setQuantite(produitDto.getQt());
+        produit.setQuantite(produitDto.getQuantite());
         produit.setDisponible(produitDto.getDisponible());
-        produit.setDateCreation(produitDto.getDate_creation());
-        produit.setDateModif(produitDto.getDate_modif());
+        produit.setDateCreation(produitDto.getDateCreation());
+        produit.setDateModif(produitDto.getDateModif());
         return produit;
     }
 }

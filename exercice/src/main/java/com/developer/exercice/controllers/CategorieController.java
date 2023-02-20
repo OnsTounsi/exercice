@@ -4,7 +4,6 @@ import com.developer.exercice.entities.Categorie;
 import com.developer.exercice.repositories.CategorieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -21,9 +20,9 @@ public class CategorieController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Categorie> findById(@PathVariable("id") Long Id) {
+    public Optional<Categorie> findById(@PathVariable("id") Long id) {
 
-        return categorieService.findById(Id);
+        return categorieService.findById(id);
     }
     @GetMapping
     public List<Categorie> findAll() {
@@ -36,13 +35,13 @@ public class CategorieController {
         return categorieService.ajout(c);
     }
     @DeleteMapping("/{id}")
-    public void supprimer(@PathVariable("id") Long Id) {
-        categorieService.supprimer(Id);
+    public void supprimer(@PathVariable("id") Long id) {
+        categorieService.supprimer(id);
 
     }
     @PutMapping("/{id}")
-    public Categorie modif(@PathVariable("id") Long Id,@RequestBody Categorie c) {
+    public Categorie modif(@PathVariable("id") Long id,@RequestBody Categorie c) {
 
-        return categorieService.modif(Id,c);
+        return categorieService.modif(id,c);
     }
 }

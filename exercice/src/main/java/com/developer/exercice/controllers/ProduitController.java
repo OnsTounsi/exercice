@@ -22,9 +22,9 @@ public class ProduitController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Produit> findById(@PathVariable("id") Long Id) {
+    public Optional<Produit> findById(@PathVariable("id") Long id) {
 
-        return produitService.findById(Id);
+        return produitService.findById(id);
     }
     @GetMapping
     public List<Produit> findAll() {
@@ -33,7 +33,7 @@ public class ProduitController {
     }
     @GetMapping("/categorie/{id}")
     public ResponseEntity<List<Produit>> getProductsByCategory(@PathVariable Long id) {
-      List<Produit> produits = produitService.AfficherProduitByCategorie(id);
+      List<Produit> produits = produitService.afficherProduitByCategorie(id);
     if (produits.isEmpty()) {
       return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
@@ -46,13 +46,13 @@ public class ProduitController {
     }
 
     @DeleteMapping("/{id}")
-    public void supprimer(@PathVariable("id") Long Id) {
+    public void supprimer(@PathVariable("id") Long id) {
 
-        produitService.supprimer(Id);
+        produitService.supprimer(id);
     }
     @PutMapping("/{id}/{idCat}")
-    public Produit modif(@PathVariable("id") Long id,@RequestBody Produit Produit,@PathVariable("idCat") Long idCat) {
+    public Produit modif(@PathVariable("id") Long id,@RequestBody Produit produit,@PathVariable("idCat") Long idCat) {
 
-        return produitService.modif(id,Produit,idCat);
+        return produitService.modif(id,produit,idCat);
     }
 }

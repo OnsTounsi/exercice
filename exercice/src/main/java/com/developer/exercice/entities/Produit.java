@@ -4,10 +4,8 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Data;
-
-import java.sql.Timestamp;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+
 
 @Entity
 @Data
@@ -31,14 +29,14 @@ public class Produit {
     @Column(name="dateMP")
     private LocalDate dateModif;
 
-    public Produit(Long id, Categorie cat, String nom, int qt, Boolean disponible, LocalDate date_creation, LocalDate date_modif) {
+    public Produit(Long id, Categorie cat, String nom, int qt, Boolean disponible, LocalDate dateCreation, LocalDate dateModif) {
         this.id = id;
         this.categorie = cat;
         this.nom = nom;
         quantite = qt;
         this.disponible = disponible;
-        dateCreation = date_creation;
-        dateModif = date_modif;
+        this.dateCreation = dateCreation;
+        this.dateModif = dateModif;
     }
 
     public Produit() {

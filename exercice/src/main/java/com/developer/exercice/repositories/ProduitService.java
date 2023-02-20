@@ -1,21 +1,19 @@
 package com.developer.exercice.repositories;
 
-import com.developer.exercice.entities.Categorie;
 import com.developer.exercice.entities.Produit;
-
 import java.util.List;
 import java.util.Optional;
 
 public interface ProduitService {
-  List<Produit> AfficherProduitByCategorie(Long idCategorie);
+  List<Produit> afficherProduitByCategorie(Long idCategorie);
 
-    Produit create (Produit Produit , long id);
+    Produit create (Produit produit , long id);
      List<Produit> findAll();
-    Optional<Produit> findById(Long Id);
+    Optional<Produit> findById(Long id);
 
-    boolean supprimer(Long Id);
+    boolean supprimer(Long id);
 
-    Produit modif(Long id, Produit Produit,Long idCat);
+    Produit modif(Long id, Produit produit,Long idCat);
 
 
 
