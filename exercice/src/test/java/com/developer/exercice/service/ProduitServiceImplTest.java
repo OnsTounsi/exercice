@@ -63,9 +63,9 @@ public class ProduitServiceImplTest {
     public void UpdateProduitSucces(){
         Categorie category = categorieRepository.findById(1L).orElse(null);
         assertNotNull(category);
-        Produit produit = produitRepository.findById(8L).orElse(null);
+        Produit produit = produitRepository.findById(16L).orElse(null);
         assertNotNull(produit);
-        produit.setNom("ethgth");
+        produit.setNom("ecran");
         produit.setDisponible(true);
         produit.setCategorie(category);
         produit.setQuantite(140);
@@ -82,12 +82,12 @@ public class ProduitServiceImplTest {
     }
     @Test
     public void DeleteProduitSucces(){
-        Categorie categorie = categorieRepository.findById(1L).orElse(null);
+        Categorie categorie = categorieRepository.findById(2L).orElse(null);
         assertNotNull(categorie);
         Produit produit = new Produit();
         Categorie savedCategorie = categorieService.ajout(categorie);
         Produit expectedProduit = Produit.builder()
-                .id(15L)
+                .id(57L)
                 .build();
 
         boolean isDelted= service.supprimer(expectedProduit.getId());

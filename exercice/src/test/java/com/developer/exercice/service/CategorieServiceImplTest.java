@@ -50,7 +50,7 @@ public class CategorieServiceImplTest {
     @Test
     public void shouldUpdateCategoryWithSuccess(){
         Categorie category = categorieRepository.findById(1L).orElse(null);
-        category.setQuantite(111);
+        category.setQuantite(150);
         category.setNom("Informatique");
 
         Categorie savedCat=service.ajout(category);
@@ -67,7 +67,7 @@ public class CategorieServiceImplTest {
     @Test
     public void shoulddeletecategorywithsuccec() {
         Categorie expectedCategorie = Categorie.builder()
-                .id(14L)
+                .id(5L)
                 .build();
         Categorie categorieAjoue = service.ajout(expectedCategorie);
 
